@@ -6,6 +6,18 @@ source = "ciscodevnet/aci"
 }
 }
 
+variable "username" {
+type        = string
+}
+
+variable "password" {
+type        = string
+}
+
+variable "apic_url" {
+type        = string
+}
+
 provider "aci" {
   # cisco-aci user name
   username = "${var.username}"
