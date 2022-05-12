@@ -1,3 +1,11 @@
+terraform {
+required_providers {
+aci = {
+source = "ciscodevnet/aci"
+}
+}
+}
+
 provider "aci" {
   # cisco-aci user name
   username = "${var.username}"
