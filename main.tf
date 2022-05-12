@@ -1,10 +1,14 @@
-provider "aws" {
-    region = "us-east-1"
-    }
+provider "aci" {
+  # cisco-aci user name
+  username = "${var.username}"
+  # cisco-aci password
+  password = "${var.password}"
+  # cisco-aci url
+  url      =  "${var.apic_url}"
+  insecure = true
+}
 
-resource "aws_vpc" "myvpc5" {
-    cidr_block = "15.0.0.0/16"
-    tags = {
-        name = "myvpc5"
-    }
+resource "aci_tenant" "terraform_tenant" {
+  name        = "tenant_for_terraform"   
+  description = "This tenant is created by the Terraform ACI provider"
 }
